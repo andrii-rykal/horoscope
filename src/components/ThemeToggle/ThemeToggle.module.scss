@@ -1,16 +1,25 @@
+@use '../../styles/mixins' as *;
+
 .button {
-  width: var(--size-8);
-  height: var(--size-8);
-  border-radius: var(--radius);
-  background: var(--color-bg);
+  @include card;
+  width: 40px;
+  height: 40px;
+  padding: var(--size-2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
   transition: var(--transition);
 
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
   }
 }
 
 .icon {
+  color: var(--color-primary);
+  transition: transform var(--transition);
+
   &.rotate {
     transform: rotate(360deg);
   }

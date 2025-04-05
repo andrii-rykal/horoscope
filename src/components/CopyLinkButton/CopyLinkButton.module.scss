@@ -1,9 +1,18 @@
+@use '../../styles/mixins' as *;
+
 .button {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+  @include flex;
+  gap: var(--size-2);
   padding: var(--size-2) var(--size-4);
-  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 .icon {
@@ -11,17 +20,16 @@
     color: var(--color-success);
   }
   &.default {
-    color: var(--color-gray-400);
+    color: var(--color-gray);
   }
 }
 
 .text {
   font-size: 0.875rem;
-
   &.active {
     color: var(--color-success);
   }
   &.default {
-    color: var(--color-gray-400);
+    color: var(--color-gray);
   }
 }

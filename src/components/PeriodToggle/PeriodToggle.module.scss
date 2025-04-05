@@ -50,14 +50,17 @@
 
 .slider {
   position: absolute;
-  height: calc(100% - var(--size-1) * 2);
-  width: calc(50% - var(--size-1));
-  background: var(--color-primary);
+  top: 4px;
+  height: calc(100% - 4px);
+  width: calc(50% - 4px);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   border-radius: var(--radius-full);
-  transition: var(--transition);
+  transition: transform var(--transition);
+  left: 4px;
+  z-index: 0;
 
   &.right {
-    transform: translateX(calc(100% + var(--size-1)));
+    transform: translateX(calc(100% + 4px));
   }
 }
 
@@ -65,23 +68,38 @@
   flex: 1;
   padding: var(--size-2) var(--size-4);
   text-align: center;
-  color: var(--color-gray);
   font-weight: 500;
   position: relative;
   z-index: 1;
   transition: var(--transition);
   cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--color-gray);
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  &.active {
+    color: var(--color-white);
+  }
 }
 
 .toggle {
-  display: inline-flex;
-  align-items: center;
+  @include flex;
   padding: var(--size-1);
   background: var(--color-white);
   border-radius: var(--radius-full);
-  min-width: 240px;
+  min-width: 200px;
+  height: 40px;
   position: relative;
   box-shadow: var(--shadow);
+
+  &:hover {
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 .checkbox {

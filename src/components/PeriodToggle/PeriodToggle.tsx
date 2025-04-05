@@ -10,15 +10,29 @@ export function PeriodToggle() {
   const dispatch = useDispatch();
   const periodDays = useSelector((state: RootState) => state.horoscope.periodDays);
 
+  const handleToggle = (days: 3 | 7) => {
+    dispatch(setPeriod(days));
+  };
+
   return (
-    <div className={styles.toggle} onClick={() => dispatch(setPeriod(periodDays === 3 ? 7 : 3))}>
+    <div className={styles.toggle}>
       <div
         className={clsx(styles.slider, {
-          [styles.sliderRight]: periodDays === 7,
+          [styles.right]: periodDays === 7,
         })}
       />
-      <span className={clsx(styles.option, { [styles.active]: periodDays === 3 })}>3 days</span>
-      <span className={clsx(styles.option, { [styles.active]: periodDays === 7 })}>7 days</span>
+      <button
+        className={clsx(styles.option, { [styles.active]: periodDays === 3 })}
+        onClick={() => handleToggle(3)}
+      >
+        3 days
+      </button>
+      <button
+        className={clsx(styles.option, { [styles.active]: periodDays === 7 })}
+        onClick={() => handleToggle(7)}
+      >
+        7 days
+      </button>
     </div>
   );
 }

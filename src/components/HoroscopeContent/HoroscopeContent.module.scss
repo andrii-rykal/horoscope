@@ -1,8 +1,7 @@
 @use '../../styles/mixins' as *;
 
 .content {
-  width: 100%;
-  max-width: 1200px;
+  max-width: var(--width-forecast);
   margin: 0 auto;
   padding: var(--size-4);
 }
@@ -15,43 +14,38 @@
 
 .header {
   @include flex;
-  justify-content: space-between;
-  margin-bottom: var(--size-8);
+  flex-direction: column;
+  gap: var(--size-4);
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--size-4);
+  max-width: var(--width-forecast);
+  margin: 0 auto;
+  padding: var(--size-8);
+  margin-bottom: var(--size-8);
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
   }
 }
 
 .headerIcon {
-  padding: var(--size-4);
-  background-color: var(--color-background-secondary);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
+  @include flex;
   justify-content: center;
-  color: var(--color-text-primary);
+  padding: var(--size-4);
+  color: var(--color-primary);
 }
 
 .headerControls {
-  display: flex;
+  @include flex;
+  gap: 3rem;
   flex-direction: column;
-  gap: var(--space-xl);
-}
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--grid-gap-md);
-
-  @media (min-width: var(--breakpoint-md)) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: var(--breakpoint-lg)) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 768px) {
+    // width: 100%;
   }
 }
 
@@ -67,23 +61,38 @@
 .calendar {
   background: var(--color-bg);
   border-radius: var(--radius);
-  padding: var(--size-4);
   margin-top: var(--size-8);
+
+  // @media (min-width: 768px) {
+  // }
 }
 
 .tabs {
+  max-width: var(--width-forecast);
+  margin: 0 auto;
   display: flex;
-  gap: var(--size-2);
+  gap: var(--size-1);
+  margin-bottom: var(--size-4);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 450px) {
+    gap: var(--size-2);
+  }
 }
 
 .forecastContent {
+  max-width: var(--width-forecast);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--size-4);
-  padding: var(--size-4);
-  background: var(--color-white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  margin-top: var(--size-4);
 }
 
 .forecastWrapper {
@@ -100,17 +109,15 @@
 }
 
 .shareButtonWrapper {
-  width: 100%;
+  grid-column: 1 / -1;
   display: flex;
   justify-content: flex-start;
-  margin-top: 1rem;
+  margin-top: var(--size-4);
+  padding: 0 var(--size-4);
 }
 
 .actions {
-  max-width: 850px;
-  padding: 2rem;
-  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
+  margin-bottom: var(--size-4);
 }

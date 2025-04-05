@@ -1,18 +1,36 @@
 @use '../../styles/mixins' as *;
 
 .container {
-  padding: var(--size-4);
-  background: var(--color-bg);
-  border-radius: var(--radius);
+  @include card;
+  width: 100%;
+  grid-column: 1 / -1;
+
+  &:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  @media (min-width: 996px) {
+    grid-column: span 1;
+  }
 }
 
 .text {
   color: var(--color-gray);
-  font-size: var(--size-4);
+  line-height: 1.6;
 }
 
 .placeholder {
   text-align: center;
-  padding: var(--size-8);
+  padding: var(--size-4);
   color: var(--color-gray);
+  grid-column: 1 / -1;
+
+  @media (min-width: 996px) {
+    grid-column: span 1;
+  }
+
+  h3 {
+    margin: var(--size-2) 0;
+    font-weight: 600;
+  }
 }
