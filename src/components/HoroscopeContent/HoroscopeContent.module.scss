@@ -1,0 +1,116 @@
+@use '../../styles/mixins' as *;
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--size-4);
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.header {
+  @include flex;
+  justify-content: space-between;
+  margin-bottom: var(--size-8);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-4);
+  }
+}
+
+.headerIcon {
+  padding: var(--size-4);
+  background-color: var(--color-background-secondary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+}
+
+.headerControls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--grid-gap-md);
+
+  @media (min-width: var(--breakpoint-md)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: var(--breakpoint-lg)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  transform: translateZ(0);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.calendar {
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: var(--size-4);
+  margin-top: var(--size-8);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--size-2);
+}
+
+.forecastContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--size-4);
+  padding: var(--size-4);
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.forecastWrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.placeholder {
+  text-align: center;
+  padding: var(--size-8);
+  color: var(--color-gray);
+}
+
+.shareButtonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.actions {
+  max-width: 850px;
+  padding: 2rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}

@@ -1,0 +1,39 @@
+@use '../../styles/mixins' as *;
+
+.container {
+  @include card;
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  min-width: 280px;
+}
+
+.icon {
+  font-size: var(--size-8);
+  color: var(--color-primary);
+
+  &.best {
+    color: var(--color-love);
+  }
+  &.worst {
+    color: var(--color-health);
+  }
+}
+
+.label {
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.value {
+  font-size: var(--size-8);
+  font-weight: 600;
+
+  &.best {
+    color: var(--color-love);
+  }
+  &.worst {
+    color: var(--color-health);
+  }
+}

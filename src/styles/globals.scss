@@ -1,0 +1,47 @@
+:root {
+  // Base colors
+  --color-bg: #f8fafc;
+  --color-text: #1e293b;
+  --color-gray: #64748b;
+  --color-white: #ffffff;
+  --color-black-10: rgba(0, 0, 0, 0.1);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+
+  // Theme colors
+  --color-primary: #6366f1;
+  --color-primary-light: #818cf8;
+  --color-love: #f43f5e;
+  --color-health: #0ea5e9;
+  --color-career: #22c55e;
+
+  // Sizes
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-4: 1rem;
+  --size-8: 2rem;
+
+  // Utils
+  --radius: 0.75rem;
+  --radius-full: 9999px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --transition: 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}

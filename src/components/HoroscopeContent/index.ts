@@ -1,0 +1,1 @@
+export { HoroscopeContent } from './HoroscopeContent';

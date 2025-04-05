@@ -1,0 +1,48 @@
+@use '../../styles/mixins' as *;
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap-md);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.select {
+  width: 100%;
+  padding: var(--size-4);
+  padding-right: var(--size-8);
+  background: var(--color-white);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--color-text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  appearance: none;
+  transition: var(--transition);
+
+  &:hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+.iconWrapper {
+  position: absolute;
+  right: var(--size-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-primary);
+  pointer-events: none;
+}

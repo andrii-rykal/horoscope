@@ -1,0 +1,130 @@
+@use '../../styles/mixins' as *;
+
+.container {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--color-gray-800);
+  border-radius: 0.75rem;
+}
+
+.button {
+  padding: 0.625rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  color: var(--color-gray-400);
+
+  &:hover {
+    color: var(--color-gray-300);
+  }
+
+  &.active {
+    background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+    color: white;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked + .slider {
+    background-color: var(--color-gray-800);
+
+    &:before {
+      transform: translateX(100px);
+      background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+    }
+  }
+}
+
+.slider {
+  position: absolute;
+  height: calc(100% - var(--size-1) * 2);
+  width: calc(50% - var(--size-1));
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+
+  &.right {
+    transform: translateX(calc(100% + var(--size-1)));
+  }
+}
+
+.option {
+  flex: 1;
+  padding: var(--size-2) var(--size-4);
+  text-align: center;
+  color: var(--color-gray);
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--size-1);
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  min-width: 240px;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:focus-visible + .track {
+    box-shadow: 0 0 0 2px var(--color-primary);
+  }
+}
+
+.track {
+  width: 3.5rem;
+  height: 2rem;
+  background-color: var(--color-gray-700);
+  border-radius: 1rem;
+  position: relative;
+  transition: all 0.3s;
+  padding: 0.25rem;
+}
+
+.thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s;
+
+  .checkbox:checked ~ .track & {
+    transform: translateX(1.5rem);
+    background-color: var(--color-primary);
+  }
+}
+
+.label {
+  color: var(--color-gray-400);
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+.active {
+  color: var(--color-text);
+}

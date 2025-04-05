@@ -1,0 +1,17 @@
+.button {
+  width: var(--size-8);
+  height: var(--size-8);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  transition: var(--transition);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.icon {
+  &.rotate {
+    transform: rotate(360deg);
+  }
+}

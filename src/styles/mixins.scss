@@ -1,0 +1,18 @@
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin hover {
+  transition: var(--transition);
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+@mixin card {
+  padding: var(--size-4);
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}

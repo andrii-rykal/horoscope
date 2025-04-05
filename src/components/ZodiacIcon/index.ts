@@ -1,0 +1,1 @@
+export { ZodiacIcon } from './ZodiacIcon';

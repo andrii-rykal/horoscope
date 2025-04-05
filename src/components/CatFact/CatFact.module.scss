@@ -1,0 +1,18 @@
+@use '../../styles/mixins' as *;
+
+.container {
+  padding: var(--size-4);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+}
+
+.text {
+  color: var(--color-gray);
+  font-size: var(--size-4);
+}
+
+.placeholder {
+  text-align: center;
+  padding: var(--size-8);
+  color: var(--color-gray);
+}
