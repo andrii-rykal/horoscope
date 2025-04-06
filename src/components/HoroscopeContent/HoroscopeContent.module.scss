@@ -46,21 +46,6 @@
   flex-direction: column;
 }
 
-.card {
-  transform: translateZ(0);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.02);
-  }
-}
-
-.calendar {
-  background: var(--color-bg);
-  border-radius: var(--radius);
-  margin-top: var(--size-8);
-}
-
 .tabs {
   max-width: var(--width-forecast);
   padding-top: 5px;
@@ -88,13 +73,6 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--size-4);
   margin-top: var(--size-4);
-}
-
-.forecastWrapper {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
 }
 
 .placeholder {

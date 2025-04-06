@@ -11,7 +11,6 @@ export const catFactsApi = createApi({
   endpoints: (builder) => ({
     getFact: builder.query<CatFact, string>({
       query: () => 'fact',
-      // Використовуємо дату як частину ключа кешу
       serializeQueryArgs: ({ queryArgs }) => queryArgs,
       merge: undefined,
       forceRefetch: ({ currentArg, previousArg }) => currentArg !== previousArg,

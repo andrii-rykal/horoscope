@@ -11,7 +11,6 @@ interface CatFactProps {
 
 export function CatFact({ forecast }: CatFactProps) {
   const average = (forecast.health + forecast.love + forecast.career) / 3;
-  // Передаємо дату як аргумент для унікального кешування
   const { data, isLoading, isError } = useGetFactQuery(forecast.date);
 
   if (average < 5) {

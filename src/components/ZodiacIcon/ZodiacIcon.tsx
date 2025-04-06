@@ -2,18 +2,18 @@
 
 import { ZodiacSign } from '@/types/horoscope';
 import {
-  Star, // для Aquarius
-  FireExtinguisher, // для Aries
-  Shell, // для Cancer
-  MountainSnow, // для Capricorn
-  Users2, // для Gemini
-  Cat, // для Leo
-  Scale, // для Libra
-  Fish, // для Pisces
-  Target, // для Sagittarius
-  Skull, // для Scorpio
-  CircleDot, // для Taurus
-  Flower, // для Virgo
+  Star,
+  FireExtinguisher,
+  Shell,
+  MountainSnow,
+  Users2,
+  Cat,
+  Scale,
+  Fish,
+  Target,
+  Skull,
+  CircleDot,
+  Flower,
 } from 'lucide-react';
 
 interface ZodiacIconProps {

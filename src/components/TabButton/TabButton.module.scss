@@ -29,23 +29,6 @@
   }
 }
 
-.button {
-  @include card;
-  min-width: 120px;
-  padding: var(--size-2);
-  cursor: pointer;
-  transition: var(--transition);
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-
-  &.active {
-    background: var(--color-primary);
-    color: var(--color-white);
-  }
-}
-
 .date {
   display: flex;
   flex-direction: column;

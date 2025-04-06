@@ -1,7 +1,7 @@
 import { DailyForecast } from '@/types/horoscope';
 import { Brain, Briefcase, Heart } from 'lucide-react';
 import clsx from 'clsx';
-import styles from './TabButton.module.scss'; // Перевіряємо, чи правильний шлях до файлу стилів
+import styles from './TabButton.module.scss';
 
 interface TabButtonProps {
   forecast: DailyForecast;
@@ -37,7 +37,7 @@ export function TabButton({ forecast, isActive, onClick }: TabButtonProps) {
       <div className={styles.metrics}>
         {metrics.map(({ icon: Icon, value, color }) => (
           <div key={color} className={styles.metric}>
-            <Icon size={10} className={styles[`icon${color}`]} /> {/* Зменшено розмір іконки */}
+            <Icon size={10} className={styles[`icon${color}`]} />
             <span className={styles[`text${color}`]}>{value.toFixed(1)}</span>
           </div>
         ))}

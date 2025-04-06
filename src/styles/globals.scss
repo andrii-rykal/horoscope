@@ -1,5 +1,4 @@
 :root {
-  // Base colors
   --color-bg: #efefef;
   --color-text: #1e293b;
   --color-gray: #64748b;
@@ -8,20 +7,17 @@
   --color-white-10: rgba(255, 255, 255, 0.1);
   --color-background-card: #ffffff;
 
-  // Theme colors
   --color-primary: #6366f1;
   --color-primary-light: #b6bdff;
   --color-love: #f43f5e;
   --color-health: #0ea5e9;
   --color-career: #22c55e;
 
-  // Sizes
   --size-1: 0.25rem;
   --size-2: 0.5rem;
   --size-4: 1rem;
   --size-8: 2rem;
 
-  // Utils
   --radius: 0.75rem;
   --radius-full: 9999px;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -30,7 +26,6 @@
 
   --width-forecast: 1000px;
 
-  // Light theme (default)
   --color-background-primary: #f8fafc;
   --color-background-card: #ffffff;
   --color-border: rgba(0, 0, 0, 0.1);

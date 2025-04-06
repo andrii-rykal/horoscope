@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction, Middleware } from '@reduxjs/toolkit';
 import { HoroscopeState, ZodiacSign } from '@/types/horoscope';
 
-// Отримуємо початковий стан з localStorage
 const getInitialState = (): HoroscopeState => {
   if (typeof window === 'undefined')
     return {
@@ -38,7 +37,6 @@ export const horoscopeSlice = createSlice({
   },
 });
 
-// Типізований middleware
 export const localStorageMiddleware: Middleware = (store) => (next) => (action: unknown) => {
   const result = next(action);
   if (typeof action === 'object' && action !== null && 'type' in action) {
