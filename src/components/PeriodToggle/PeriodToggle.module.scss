@@ -50,13 +50,13 @@
 
 .slider {
   position: absolute;
-  top: 4px;
-  height: calc(100% - 4px);
-  width: calc(50% - 4px);
+  top: 0;
+  height: calc(100%);
+  width: calc(50%);
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   border-radius: var(--radius-full);
   transition: transform var(--transition);
-  left: 4px;
+  left: 0;
   z-index: 0;
 
   &.right {
@@ -76,21 +76,24 @@
   border: none;
   background: transparent;
   outline: none;
-  color: var(--color-gray);
+  color: var(--color-text);
+  opacity: 0.7;
 
   &:hover {
-    color: var(--color-text);
+    opacity: 1;
   }
 
   &.active {
     color: var(--color-white);
+    opacity: 1;
   }
 }
 
 .toggle {
   @include flex;
   padding: var(--size-1);
-  background: var(--color-white);
+  background: var(--color-background-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   min-width: 200px;
   height: 40px;

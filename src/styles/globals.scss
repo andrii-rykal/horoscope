@@ -6,6 +6,7 @@
   --color-white: #ffffff;
   --color-black-10: rgba(0, 0, 0, 0.1);
   --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-background-card: #ffffff;
 
   // Theme colors
   --color-primary: #6366f1;
@@ -28,6 +29,24 @@
   --transition: 0.2s ease-in-out;
 
   --width-forecast: 1000px;
+
+  // Light theme (default)
+  --color-background-primary: #f8fafc;
+  --color-background-card: #ffffff;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-text-secondary: #64748b;
+}
+
+[data-theme='dark'] {
+  --color-bg: #121212;
+  --color-text: #e2e8f0;
+  --color-gray: #94a3b8;
+  --color-background-card: #1e1e1e;
+  --color-background-primary: #1a1a1a;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text-secondary: #94a3b8;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
 }
 
 * {

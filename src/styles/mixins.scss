@@ -12,7 +12,7 @@
 
 @mixin card {
   padding: var(--size-4);
-  background: var(--color-white);
+  background: var(--color-background-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }

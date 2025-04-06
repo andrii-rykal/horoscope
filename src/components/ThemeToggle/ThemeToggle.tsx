@@ -6,10 +6,15 @@ import { RootState } from '@/store';
 import { toggleTheme } from '@/store/features/horoscopeSlice';
 import styles from './ThemeToggle.module.scss';
 import clsx from 'clsx';
+import { useEffect } from 'react';
 
 export function ThemeToggle() {
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.horoscope.theme);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
     <button
