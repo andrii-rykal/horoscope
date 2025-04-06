@@ -34,7 +34,7 @@ export function ZodiacSelector() {
         className={styles.select}
       >
         {zodiacSigns.map((sign) => (
-          <option key={sign} value={sign} className={styles.option}>
+          <option key={sign} value={sign}>
             {sign.charAt(0).toUpperCase() + sign.slice(1)}
           </option>
         ))}
