@@ -3,33 +3,47 @@
 .button {
   @include flex;
   gap: var(--size-2);
-  padding: var(--size-2) var(--size-4);
+  padding: var(--size-4) var(--size-8);
+  font-size: 1rem;
+  font-weight: 500;
   background: var(--color-white);
   border-radius: var(--radius);
-  transition: var(--transition);
+  border: 1px solid transparent;
+  transition: all var(--transition);
   box-shadow: var(--shadow);
   cursor: pointer;
 
   &:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-primary-light);
     box-shadow: var(--shadow-hover);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
 
 .icon {
+  transition: transform var(--transition);
+
   &.active {
-    color: var(--color-success);
+    color: var(--color-career);
+    transform: scale(1.1);
   }
   &.default {
-    color: var(--color-gray);
+    color: var(--color-primary);
   }
 }
 
 .text {
   font-size: 0.875rem;
+  transition: color var(--transition);
+
   &.active {
-    color: var(--color-success);
+    color: var(--color-career);
   }
   &.default {
-    color: var(--color-gray);
+    color: var(--color-primary);
   }
 }

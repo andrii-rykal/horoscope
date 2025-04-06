@@ -43,9 +43,9 @@ export function KeyMetric({ type, name, value }: KeyMetricProps) {
     default:
       return (
         <div className={styles.container}>
-          <TrendingUp size={24} className={styles.icon} />
+          <TrendingUp size={24} className={clsx(styles.icon, styles.average)} />
           <span className={styles.label}>Overall Balance</span>
-          <span className={styles.value}>{value.toFixed(1)}</span>
+          <span className={clsx(styles.value, styles.average)}>{value.toFixed(1)}</span>
         </div>
       );
   }

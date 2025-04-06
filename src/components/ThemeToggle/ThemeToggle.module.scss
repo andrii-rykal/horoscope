@@ -1,26 +1,54 @@
 @use '../../styles/mixins' as *;
 
 .button {
-  @include card;
+  @include flex;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  padding: var(--size-2);
-  display: grid;
-  place-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow);
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary-light), transparent);
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
 
   &:hover {
     transform: translateY(-2px);
+    border-color: var(--color-primary-light);
     box-shadow: var(--shadow-hover);
+
+    &::after {
+      opacity: 0.1;
+    }
+
+    .icon {
+      transform: rotate(15deg);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
 
 .icon {
+  position: relative;
+  z-index: 1;
   color: var(--color-primary);
-  transition: transform var(--transition);
+  transition: all var(--transition);
 
   &.rotate {
-    transform: rotate(360deg);
+    transform: rotate(360deg) !important;
   }
 }
